@@ -21,6 +21,7 @@ public class Calculator {
     JButton buttonMinus=new JButton("-");
     JButton buttonDivide=new JButton("/");
     JButton buttonMultiply=new JButton("*");
+    JButton buttonExit=new JButton("exit");
     JPanel windowContent = new JPanel();
     JTextField displayField = new JTextField(30);
 
@@ -61,6 +62,7 @@ public class Calculator {
         p2.add(buttonMinus);
         p2.add(buttonMultiply);
         p2.add(buttonDivide);
+        p2.add(buttonExit);
 // Добавляем панель p2 в правую часть окна
         windowContent.add("East", p2);
 // Создаем frame и добавляем в него содержимое JFrame
@@ -89,6 +91,7 @@ public class Calculator {
         buttonMinus.addActionListener(calcEngine);
         buttonDivide.addActionListener(calcEngine);
         buttonMultiply.addActionListener(calcEngine);
+        buttonExit.addActionListener(calcEngine);
         buttonEqual.addActionListener(calcEngine);
     }
         public static void main(String[] args) {

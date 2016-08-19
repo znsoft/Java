@@ -49,6 +49,8 @@ public class CalculatorEngine implements ActionListener
             selectedAction = '*';
             currentResult = displayValue;
             parent.displayField.setText("");
+        } else if (src == parent.buttonExit) {
+            System.exit(0);
         } else if (src == parent.buttonEqual) {
             // Совершить арифметическое действие, в зависимости
             // от selectedAction, обновить переменную currentResult
