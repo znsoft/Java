@@ -23,6 +23,7 @@ public class Calculator {
     JButton buttonMultiply=new JButton("*");
     JPanel windowContent = new JPanel();
     JTextField displayField = new JTextField(30);
+
     // Конструктор
     Calculator() {
 // Установить менеджер расположения для панели
