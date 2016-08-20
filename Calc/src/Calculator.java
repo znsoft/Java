@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 
 public class Calculator {
@@ -73,8 +75,7 @@ public class Calculator {
         frame.setVisible(true);
 // Создаем экземпляр слушателя событий и
 // регистрируем его в каждой кнопке
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         CalculatorEngine calcEngine = new CalculatorEngine(this);
         button0.addActionListener(calcEngine);
         button1.addActionListener(calcEngine);
@@ -92,6 +93,48 @@ public class Calculator {
         buttonDivide.addActionListener(calcEngine);
         buttonMultiply.addActionListener(calcEngine);
         buttonEqual.addActionListener(calcEngine);
+
+        frame.addWindowListener(new WindowListener() {
+
+            public void windowActivated(WindowEvent event) {
+
+            }
+
+            public void windowClosed(WindowEvent event) {
+
+            }
+
+            public void windowClosing(WindowEvent event) {
+                Object[] options = { "Да", "Нет!" };
+                int n = JOptionPane
+                        .showOptionDialog(event.getWindow(), "Закрыть окно?",
+                                "Подтверждение", JOptionPane.YES_NO_OPTION,
+                                JOptionPane.QUESTION_MESSAGE, null, options,
+                                options[0]);
+                if (n == 0) {
+                    event.getWindow().setVisible(false);
+                    System.exit(0);
+                }
+            }
+
+            public void windowDeactivated(WindowEvent event) {
+
+            }
+
+            public void windowDeiconified(WindowEvent event) {
+
+            }
+
+            public void windowIconified(WindowEvent event) {
+
+            }
+
+            public void windowOpened(WindowEvent event) {
+
+            }
+
+        });
+
     }
         public static void main(String[] args) {
 // Создаем экземпляр класса “Калькулятор”

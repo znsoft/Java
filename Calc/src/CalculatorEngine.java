@@ -16,7 +16,7 @@ public class CalculatorEngine implements ActionListener
         this.parent = parent;
     }
 
-    public void actionPerformed(ActionEvent e)
+       public void actionPerformed(ActionEvent e)
     {
         // Получить источник действия
         JButton clickedButton = (JButton) e.getSource();
