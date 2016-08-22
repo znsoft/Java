@@ -13,7 +13,7 @@ public class CalculatorEngine extends java.awt.event.WindowAdapter implements Ac
     double currentResult = 0;
 
     // Конструктор сохраняет ссылку на окно калькулятора
-// в переменной экземпляра класса
+    // в переменной экземпляра класса
     CalculatorEngine(Calculator parent)
     {
         this.parent = parent;
