@@ -24,7 +24,8 @@ public class Calculator {
     JButton buttonDivide=new JButton("/");
     JButton buttonMultiply=new JButton("*");
     JPanel windowContent = new JPanel();
-    JTextField displayField = new JTextField(30);
+    //JTextField displayField = new JTextField(30);
+    JFormattedTextField displayField = new JFormattedTextField();
 
     // Конструктор
     Calculator() {
@@ -33,6 +34,7 @@ public class Calculator {
         windowContent.setLayout(bl);
 // Добавляем дисплей в верхней части окна
         windowContent.add("North", displayField);
+        displayField.setHorizontalAlignment(JFormattedTextField.RIGHT);
 // Создаем панель с менеджером расположения GridLayout
 // в которой будет 12 кнопок - 10 цифр, и
 // кнопки “точка” и “равно”
