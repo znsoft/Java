@@ -4,7 +4,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-public class CalculatorEngine implements ActionListener, WindowListener
+
+public class CalculatorEngine extends java.awt.event.WindowAdapter implements ActionListener
 {
 
     Calculator parent; //ссылка на окно калькулятора
@@ -79,14 +80,6 @@ public class CalculatorEngine implements ActionListener, WindowListener
         }
     }
 
-    public void windowActivated(WindowEvent event) {
-
-    }
-
-    public void windowClosed(WindowEvent event) {
-
-    }
-
     public void windowClosing(WindowEvent event) {
         Object[] options = { "Да", "Нет!" };
         int n = JOptionPane
@@ -98,22 +91,6 @@ public class CalculatorEngine implements ActionListener, WindowListener
             event.getWindow().setVisible(false);
             System.exit(0);
         }
-    }
-
-    public void windowDeactivated(WindowEvent event) {
-
-    }
-
-    public void windowDeiconified(WindowEvent event) {
-
-    }
-
-    public void windowIconified(WindowEvent event) {
-
-    }
-
-    public void windowOpened(WindowEvent event) {
-
     }
 
 
