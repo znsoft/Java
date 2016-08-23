@@ -20,7 +20,7 @@ public class TicTacToe extends Applet implements ActionListener{
         this.setBackground(Color.CYAN);
         // Изменяем шрифт апплета так, чтобы он был жирным
         // и имел размер 20
-        Font appletFont=new Font("Monospased",Font.BOLD, 20);
+        Font appletFont=new Font("Verdana",Font.BOLD, 20);
         this.setFont(appletFont);
         // Создаем кнопку “New Game” и регистрируем в ней
         // слушатель действия
@@ -55,8 +55,9 @@ public class TicTacToe extends Applet implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         Button theButton = (Button) e.getSource();
         // Это кнопка New Game ?
-        if (theButton ==newGameButton){
-            for(int i=0;i<9;i++){
+        if (theButton == newGameButton){
+            for(int i=0;i<9;i++)
+            {
                 squares[i].setEnabled(true);
                 squares[i].setLabel("");
                 squares[i].setBackground(Color.ORANGE);
@@ -69,22 +70,28 @@ public class TicTacToe extends Applet implements ActionListener{
         String winner = "";
         // Это одна из клеток?
         for ( int i=0; i<9; i++ ) {
-            if ( theButton == squares[i] ) {
+            if ( theButton == squares[i] )
+            {
                 squares[i].setLabel("X");
                 winner = lookForWinner();
-                if(!"".equals(winner)){
+                if (!"".equals(winner))
+                {
                     endTheGame();
-                } else {
+                }
+                else
+                {
                     computerMove();
                     winner = lookForWinner();
-                    if ( !"".equals(winner)){
+                    if ( !"".equals(winner))
+                    {
                         endTheGame();
                     }
                 }
                 break;
             }
         } // конец цикла for
-        switch (winner) {
+        switch (winner)
+        {
             case "X":
                 score.setText("You won!");
                 break;
@@ -114,51 +121,43 @@ public class TicTacToe extends Applet implements ActionListener{
             return "T"; // это ничья. T от английского слова tie
         }
         // Проверяем ряд 1 – элементы массива 0,1,2
-        if (!squares[0].getLabel().equals("") &&
-                squares[0].getLabel().equals(squares[1].getLabel()) &&
-                squares[0].getLabel().equals(squares[2].getLabel())) {
+        if (!squares[0].getLabel().equals("") && squares[0].getLabel().equals(squares[1].getLabel()) && squares[0].getLabel().equals(squares[2].getLabel()))
+        {
             theWinner = squares[0].getLabel();
             highlightWinner(0,1,2);
         // Проверяем ряд 2 – элементы массива 3,4,5
-        } else if (!squares[3].getLabel().equals("") &&
-                squares[3].getLabel().equals(squares[4].getLabel()) &&
-                squares[3].getLabel().equals(squares[5].getLabel())) {
+        } else if (!squares[3].getLabel().equals("") && squares[3].getLabel().equals(squares[4].getLabel()) && squares[3].getLabel().equals(squares[5].getLabel()))
+        {
             theWinner = squares[3].getLabel();
             highlightWinner(3,4,5);
         // Проверяем ряд 3 – элементы массива 6,7,8
-        } else if ( ! squares[6].getLabel().equals("") &&
-                squares[6].getLabel().equals(squares[7].getLabel()) &&
-                squares[6].getLabel().equals(squares[8].getLabel())) {
+        } else if ( ! squares[6].getLabel().equals("") && squares[6].getLabel().equals(squares[7].getLabel()) && squares[6].getLabel().equals(squares[8].getLabel()))
+        {
             theWinner = squares[6].getLabel();
             highlightWinner(6,7,8);
         // Проверяем колонку 1 – элементы массива 0,3,6
-        } else if ( ! squares[0].getLabel().equals("") &&
-                squares[0].getLabel().equals(squares[3].getLabel()) &&
-                squares[0].getLabel().equals(squares[6].getLabel())) {
+        } else if ( ! squares[0].getLabel().equals("") && squares[0].getLabel().equals(squares[3].getLabel()) && squares[0].getLabel().equals(squares[6].getLabel()))
+        {
             theWinner = squares[0].getLabel();
             highlightWinner(0,3,6);
         // Проверяем колонку 2 – элементы массива 1,4,7
-        } else if ( ! squares[1].getLabel().equals("") &&
-                squares[1].getLabel().equals(squares[4].getLabel()) &&
-                squares[1].getLabel().equals(squares[7].getLabel())) {
+        } else if ( ! squares[1].getLabel().equals("") && squares[1].getLabel().equals(squares[4].getLabel()) && squares[1].getLabel().equals(squares[7].getLabel()))
+        {
             theWinner = squares[1].getLabel();
             highlightWinner(1,4,7);
         // Проверяем колонку 3 – элементы массива 2,5,8
-        } else if ( ! squares[2].getLabel().equals("") &&
-                squares[2].getLabel().equals(squares[5].getLabel()) &&
-                squares[2].getLabel().equals(squares[8].getLabel())) {
+        } else if ( ! squares[2].getLabel().equals("") && squares[2].getLabel().equals(squares[5].getLabel()) && squares[2].getLabel().equals(squares[8].getLabel()))
+        {
             theWinner = squares[2].getLabel();
             highlightWinner(2,5,8);
         // Проверяем первую диагональ – элементы массива 0,4,8
-        } else if ( ! squares[0].getLabel().equals("") &&
-                squares[0].getLabel().equals(squares[4].getLabel()) &&
-                squares[0].getLabel().equals(squares[8].getLabel())) {
+        } else if ( ! squares[0].getLabel().equals("") && squares[0].getLabel().equals(squares[4].getLabel()) && squares[0].getLabel().equals(squares[8].getLabel()))
+        {
             theWinner = squares[0].getLabel();
             highlightWinner(0,4,8);
         // Проверяем вторую диагональ – элементы массива 2,4,6
-        } else if ( ! squares[2].getLabel().equals("") &&
-                squares[2].getLabel().equals(squares[4].getLabel()) &&
-                squares[2].getLabel().equals(squares[6].getLabel())) {
+        } else if ( ! squares[2].getLabel().equals("") && squares[2].getLabel().equals(squares[4].getLabel()) && squares[2].getLabel().equals(squares[6].getLabel()))
+        {
             theWinner = squares[2].getLabel();
             highlightWinner(2,4,6);
         }
@@ -323,9 +322,11 @@ public class TicTacToe extends Applet implements ActionListener{
     {
         boolean gotEmptySquare = false;
         int selectedSquare = -1;
-        do {
+        do
+        {
             selectedSquare = (int) (Math.random() * 9 );
-            if (squares[selectedSquare].getLabel().equals("")){
+            if (squares[selectedSquare].getLabel().equals(""))
+            {
                 gotEmptySquare = true; // чтобы закончить цикл
             }
         } while (!gotEmptySquare );
