@@ -25,10 +25,10 @@
       <file leaf-file-name="TicTacToe.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="788">
-              <caret line="345" column="8" selection-start-line="345" selection-start-column="8" selection-end-line="345" selection-end-column="8" />
+            <state relative-caret-position="353">
+              <caret line="327" column="63" selection-start-line="327" selection-start-column="63" selection-end-line="327" selection-end-column="63" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#0#12408#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -579,12 +579,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1471932397115</updated>
-      <workItem from="1471932399442" duration="1855000" />
+      <workItem from="1471932399442" duration="2568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1855000" />
+    <option name="totallyTimeSpent" value="2568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
@@ -639,10 +639,10 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/TicTacToe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="788">
-          <caret line="345" column="8" selection-start-line="345" selection-start-column="8" selection-end-line="345" selection-end-column="8" />
+        <state relative-caret-position="353">
+          <caret line="327" column="63" selection-start-line="327" selection-start-column="63" selection-end-line="327" selection-end-column="63" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#12408#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

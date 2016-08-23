@@ -1,14 +1,14 @@
-/**
+/*
  * Игра крестики-нолики на доске 3x3
  */
 import java.awt.*;
 import java.awt.event.*;
 import java.applet.Applet;
 public class TicTacToe extends Applet implements ActionListener{
-    Button squares[];
-    Button newGameButton;
-    Label score;
-    int emptySquaresLeft=9;
+    private Button squares[];
+    private Button newGameButton;
+    private Label score;
+    private int emptySquaresLeft=9;
 
     /**
      * Метод init – это конструктор апплета
@@ -84,12 +84,16 @@ public class TicTacToe extends Applet implements ActionListener{
                 break;
             }
         } // конец цикла for
-        if ( winner.equals("X") ) {
-            score.setText("You won!");
-        } else if (winner.equals("O")){
-            score.setText("You lost!");
-        } else if (winner.equals("T")){
-            score.setText("It's a tie!");
+        switch (winner) {
+            case "X":
+                score.setText("You won!");
+                break;
+            case "O":
+                score.setText("You lost!");
+                break;
+            case "T":
+                score.setText("It's a tie!");
+                break;
         }
     } // конец метода actionPerformed
 
@@ -102,7 +106,8 @@ public class TicTacToe extends Applet implements ActionListener{
      * (не пустыми)
      * @return "X", "O", "T" – ничья, "" - еще нет победителя
      */
-    String lookForWinner() {
+    private String lookForWinner()
+    {
         String theWinner = "";
         emptySquaresLeft--;
         if (emptySquaresLeft==0){
@@ -166,7 +171,7 @@ public class TicTacToe extends Applet implements ActionListener{
      * лучший компьютерный ход. Если хороший ход
      * не найден, выбирается случайная клетка.
      */
-    void computerMove()
+    private void computerMove()
     {
         int selectedSquare;
         // Сначала компьютер пытается найти пустую клетку
@@ -204,7 +209,7 @@ public class TicTacToe extends Applet implements ActionListener{
      * или -1, если не найдено две клетки
      * с одинаковыми надписями
      */
-    int findEmptySquare(String player)
+    private int findEmptySquare(String player)
     {
         int weight[] = new int[9];
         for ( int i = 0; i < 9; i++ )
@@ -314,7 +319,7 @@ public class TicTacToe extends Applet implements ActionListener{
      * Этот метод выбирает любую пустую клетку
      * @return случайно выбранный номер клетки
      */
-    int getRandomSquare()
+    private int getRandomSquare()
     {
         boolean gotEmptySquare = false;
         int selectedSquare = -1;
@@ -332,14 +337,14 @@ public class TicTacToe extends Applet implements ActionListener{
      * Этот метод выделяет выигравшую линию.
      * @param первая, вторая и третья клетки для выделения
      */
-    void highlightWinner(int win1, int win2, int win3)
+    private void highlightWinner(int win1, int win2, int win3)
     {
         squares[win1].setBackground(Color.CYAN);
         squares[win2].setBackground(Color.CYAN);
         squares[win3].setBackground(Color.CYAN);
     }
     // Делаем недоступными клетки и доступной кнопку ”New Game”
-    void endTheGame()
+    private void endTheGame()
     {
         newGameButton.setEnabled(true);
         for(int i=0;i<9;i++)
