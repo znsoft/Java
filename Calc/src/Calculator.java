@@ -28,6 +28,7 @@ public class Calculator {
         windowContent.setLayout(bl);
         // Добавляем дисплей в верхней части окна
         displayField.setHorizontalAlignment(JFormattedTextField.RIGHT);
+        displayField.setEditable(false);
         JPanel p0 = new JPanel();
         p0.add(displayField);
         p0.add(buttonAC);
