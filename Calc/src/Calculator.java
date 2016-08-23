@@ -1,19 +1,20 @@
 import com.sun.xml.internal.bind.v2.runtime.RuntimeUtil;
 
 import javax.swing.*;
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
+import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 
 public class Calculator {
     JFormattedTextField displayField = new JFormattedTextField();
+
     JButton buttonEqual=new JButton("=");
     JButton buttonPlus=new JButton("+");
     JButton buttonMinus=new JButton("-");
     JButton buttonDivide=new JButton("/");
     JButton buttonMultiply=new JButton("*");
+    JButton buttonAC=new JButton("AC");
 
     // Конструктор
     Calculator() {
@@ -26,8 +27,14 @@ public class Calculator {
         BorderLayout bl = new BorderLayout();
         windowContent.setLayout(bl);
         // Добавляем дисплей в верхней части окна
-        windowContent.add("North", displayField);
         displayField.setHorizontalAlignment(JFormattedTextField.RIGHT);
+        JPanel p0 = new JPanel();
+        p0.add(displayField);
+        p0.add(buttonAC);
+        p0.setLayout(new BoxLayout(p0, BoxLayout.X_AXIS));
+        windowContent.add("North", p0);
+
+
         // Создаем панель с менеджером расположения GridLayout
         // в которой будет 12 кнопок - 10 цифр, и
         // кнопки “точка” и “равно”
@@ -77,6 +84,7 @@ public class Calculator {
         buttonDivide.addActionListener(calcEngine);
         buttonMultiply.addActionListener(calcEngine);
         buttonEqual.addActionListener(calcEngine);
+        buttonAC.addActionListener(calcEngine);
         frame.addWindowListener(calcEngine);
 
     }

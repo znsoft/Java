@@ -44,6 +44,9 @@ public class CalculatorEngine extends java.awt.event.WindowAdapter implements Ac
             selectedAction = '-';
             currentResult = displayValue;
             parent.displayField.setText("");
+        } else if (src == parent.buttonAC) {
+            currentResult = 0;
+            parent.displayField.setText("0");
         } else if (src == parent.buttonDivide) {
             selectedAction = '/';
             currentResult = displayValue;
@@ -65,8 +68,15 @@ public class CalculatorEngine extends java.awt.event.WindowAdapter implements Ac
                 currentResult -= displayValue;
                 parent.displayField.setText("" + currentResult);
             } else if (selectedAction == '/') {
-                currentResult /= displayValue;
-                parent.displayField.setText("" + currentResult);
+                if (displayValue != 0) {
+                    currentResult /= displayValue;
+                    parent.displayField.setText("" + currentResult);
+                }
+                else
+                {
+                    parent.displayField.setText("Error");
+                }
+
             } else if (selectedAction == '*') {
                 currentResult *= displayValue;
                 parent.displayField.setText("" + currentResult);
@@ -75,13 +85,20 @@ public class CalculatorEngine extends java.awt.event.WindowAdapter implements Ac
         // Для всех цифровых кнопок присоединить надпись на
         // кнопке к надписи в дисплее
             String clickedButtonLabel = clickedButton.getText();
-            parent.displayField.setText(dispFieldText +
-                    clickedButtonLabel);
+            if (clickedButtonLabel.equals(".") && dispFieldText.indexOf('.')!= -1)
+            {
+                parent.displayField.setText(dispFieldText);
+            }
+            else
+            {
+                parent.displayField.setText(dispFieldText +
+                        clickedButtonLabel);
+            }
         }
     }
 
     public void windowClosing(WindowEvent event) {
-        Object[] options = { "Да", "Нет!" };
+        Object[] options = { "Да", "Нет" };
         int n = JOptionPane
                 .showOptionDialog(event.getWindow(), "Закрыть окно?",
                         "Подтверждение", JOptionPane.YES_NO_OPTION,
