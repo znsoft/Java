@@ -5,19 +5,25 @@ import java.awt.*;
 import java.awt.event.*;
 import java.applet.Applet;
 public class TicTacToe extends Applet implements ActionListener{
+
     private Button squares[];
     private Button newGameButton;
     private Label score;
+    private Label won;
+    private Label lost;
     private int emptySquaresLeft=9;
+    int won_n = 0;
+    int lost_n = 0;
 
     /**
      * Метод init – это конструктор апплета
      */
     public void init()
     {
+
         //Устанавливаем менеджер расположения апплета, шрифт и цвет
         this.setLayout(new BorderLayout());
-        this.setBackground(Color.CYAN);
+        this.setBackground(Color.lightGray);
         // Изменяем шрифт апплета так, чтобы он был жирным
         // и имел размер 20
         Font appletFont=new Font("Verdana",Font.BOLD, 20);
@@ -27,7 +33,12 @@ public class TicTacToe extends Applet implements ActionListener{
         newGameButton=new Button("New Game");
         newGameButton.addActionListener(this);
         Panel topPanel=new Panel();
+        topPanel.setLayout(new GridLayout());
+        won = new Label("Won: 0");
+        lost = new Label("Lost: 0");
+        topPanel.add(won);
         topPanel.add(newGameButton);
+        topPanel.add(lost);
         this.add(topPanel,"North");
         Panel centerPanel=new Panel();
         centerPanel.setLayout(new GridLayout(3,3));
@@ -72,6 +83,11 @@ public class TicTacToe extends Applet implements ActionListener{
         for ( int i=0; i<9; i++ ) {
             if ( theButton == squares[i] )
             {
+                // Проверка на то, что уже кнопка нажата
+                if (squares[i].getLabel() != "")
+                {
+                    return;
+                }
                 squares[i].setLabel("X");
                 winner = lookForWinner();
                 if (!"".equals(winner))
@@ -94,9 +110,13 @@ public class TicTacToe extends Applet implements ActionListener{
         {
             case "X":
                 score.setText("You won!");
+                won_n ++;
+                won.setText("Won: "+Integer.toString(won_n));
                 break;
             case "O":
                 score.setText("You lost!");
+                lost_n ++;
+                lost.setText("Lost: "+Integer.toString(lost_n));
                 break;
             case "T":
                 score.setText("It's a tie!");
