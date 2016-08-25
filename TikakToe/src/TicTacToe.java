@@ -152,7 +152,7 @@ public class TicTacToe extends Applet implements ActionListener{
                 theWinner = squares[i][0].getLabel();
                 highlightWinner(squares[i][0],squares[i][1],squares[i][2]);
             }
-            else if (!Objects.equals(squares[0][i].getLabel(), "") && Objects.equals(squares[i][0].getLabel(), squares[1][i].getLabel()) && Objects.equals(squares[0][i].getLabel(), squares[2][i].getLabel()))
+            else if (!Objects.equals(squares[0][i].getLabel(), "") && Objects.equals(squares[0][i].getLabel(), squares[1][i].getLabel()) && Objects.equals(squares[0][i].getLabel(), squares[2][i].getLabel()))
             {
                 theWinner = squares[0][i].getLabel();
                 highlightWinner(squares[0][i],squares[1][i],squares[2][i]);
