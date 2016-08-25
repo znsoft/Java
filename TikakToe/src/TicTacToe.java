@@ -4,23 +4,24 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.applet.Applet;
+import java.util.Objects;
+
 public class TicTacToe extends Applet implements ActionListener{
 
-    private Button squares[];
+    private Button squares[][];
     private Button newGameButton;
     private Label score;
     private Label won;
     private Label lost;
     private int emptySquaresLeft=9;
-    int won_n = 0;
-    int lost_n = 0;
+    private int won_n = 0;
+    private int lost_n = 0;
 
     /**
      * Метод init – это конструктор апплета
      */
     public void init()
     {
-
         //Устанавливаем менеджер расположения апплета, шрифт и цвет
         this.setLayout(new BorderLayout());
         this.setBackground(Color.lightGray);
@@ -46,16 +47,19 @@ public class TicTacToe extends Applet implements ActionListener{
         score=new Label("Your turn!");
         this.add(score,"South");
         // создаем массив, чтобы хранить ссылки на 9 кнопок
-        squares=new Button[9];
+        squares=new Button[3][3];
         // Создаем кнопки, сохраняем ссылки на них в массиве
         // регистрируем в них слушатель, красим их
         // в оранжевый цвет и добавляем на панель
-        for(int i=0;i<9;i++)
+        for(int i=0;i<3;i++)
         {
-            squares[i]=new Button();
-            squares[i].addActionListener(this);
-            squares[i].setBackground(Color.ORANGE);
-            centerPanel.add(squares[i]);
+            for (int j=0;j<3;j++)
+            {
+                squares[i][j] = new Button();
+                squares[i][j].addActionListener(this);
+                squares[i][j].setBackground(Color.ORANGE);
+                centerPanel.add(squares[i][j]);
+            }
         }
     }
 
@@ -67,11 +71,14 @@ public class TicTacToe extends Applet implements ActionListener{
         Button theButton = (Button) e.getSource();
         // Это кнопка New Game ?
         if (theButton == newGameButton){
-            for(int i=0;i<9;i++)
+            for(int i=0;i<3;i++)
             {
-                squares[i].setEnabled(true);
-                squares[i].setLabel("");
-                squares[i].setBackground(Color.ORANGE);
+                for (int j=0;j<3;j++)
+                {
+                    squares[i][j].setEnabled(true);
+                    squares[i][j].setLabel("");
+                    squares[i][j].setBackground(Color.ORANGE);
+                }
             }
             emptySquaresLeft=9;
             score.setText("Your turn!");
@@ -80,30 +87,28 @@ public class TicTacToe extends Applet implements ActionListener{
         }
         String winner = "";
         // Это одна из клеток?
-        for ( int i=0; i<9; i++ ) {
-            if ( theButton == squares[i] )
+        for ( int i=0; i<3; i++ )
+        {
+            for (int j=0;j<3;j++)
             {
-                // Проверка на то, что уже кнопка нажата
-                if (squares[i].getLabel() != "")
-                {
-                    return;
-                }
-                squares[i].setLabel("X");
-                winner = lookForWinner();
-                if (!"".equals(winner))
-                {
-                    endTheGame();
-                }
-                else
-                {
-                    computerMove();
-                    winner = lookForWinner();
-                    if ( !"".equals(winner))
-                    {
-                        endTheGame();
+                if (theButton == squares[i][j]) {
+                    // Проверка на то, что уже кнопка нажата
+                    if (!squares[i][j].getLabel().equals("")) {
+                        return;
                     }
+                    squares[i][j].setLabel("X");
+                    winner = lookForWinner();
+                    if (!"".equals(winner)) {
+                        endTheGame();
+                    } else {
+                        computerMove();
+                        winner = lookForWinner();
+                        if (!"".equals(winner)) {
+                            endTheGame();
+                        }
+                    }
+                    break;
                 }
-                break;
             }
         } // конец цикла for
         switch (winner)
@@ -124,8 +129,6 @@ public class TicTacToe extends Applet implements ActionListener{
         }
     } // конец метода actionPerformed
 
-
-
     /**
      * Этот метод вызывается после каждого хода, чтобы узнать,
      * есть ли победитель. Он проверяет каждый ряд, колонку
@@ -137,53 +140,36 @@ public class TicTacToe extends Applet implements ActionListener{
     {
         String theWinner = "";
         emptySquaresLeft--;
-        if (emptySquaresLeft==0){
+        if (emptySquaresLeft==0)
+        {
             return "T"; // это ничья. T от английского слова tie
         }
-        // Проверяем ряд 1 – элементы массива 0,1,2
-        if (!squares[0].getLabel().equals("") && squares[0].getLabel().equals(squares[1].getLabel()) && squares[0].getLabel().equals(squares[2].getLabel()))
+
+        for (int i=0;i<3;i++)
         {
-            theWinner = squares[0].getLabel();
-            highlightWinner(0,1,2);
-        // Проверяем ряд 2 – элементы массива 3,4,5
-        } else if (!squares[3].getLabel().equals("") && squares[3].getLabel().equals(squares[4].getLabel()) && squares[3].getLabel().equals(squares[5].getLabel()))
-        {
-            theWinner = squares[3].getLabel();
-            highlightWinner(3,4,5);
-        // Проверяем ряд 3 – элементы массива 6,7,8
-        } else if ( ! squares[6].getLabel().equals("") && squares[6].getLabel().equals(squares[7].getLabel()) && squares[6].getLabel().equals(squares[8].getLabel()))
-        {
-            theWinner = squares[6].getLabel();
-            highlightWinner(6,7,8);
-        // Проверяем колонку 1 – элементы массива 0,3,6
-        } else if ( ! squares[0].getLabel().equals("") && squares[0].getLabel().equals(squares[3].getLabel()) && squares[0].getLabel().equals(squares[6].getLabel()))
-        {
-            theWinner = squares[0].getLabel();
-            highlightWinner(0,3,6);
-        // Проверяем колонку 2 – элементы массива 1,4,7
-        } else if ( ! squares[1].getLabel().equals("") && squares[1].getLabel().equals(squares[4].getLabel()) && squares[1].getLabel().equals(squares[7].getLabel()))
-        {
-            theWinner = squares[1].getLabel();
-            highlightWinner(1,4,7);
-        // Проверяем колонку 3 – элементы массива 2,5,8
-        } else if ( ! squares[2].getLabel().equals("") && squares[2].getLabel().equals(squares[5].getLabel()) && squares[2].getLabel().equals(squares[8].getLabel()))
-        {
-            theWinner = squares[2].getLabel();
-            highlightWinner(2,5,8);
-        // Проверяем первую диагональ – элементы массива 0,4,8
-        } else if ( ! squares[0].getLabel().equals("") && squares[0].getLabel().equals(squares[4].getLabel()) && squares[0].getLabel().equals(squares[8].getLabel()))
-        {
-            theWinner = squares[0].getLabel();
-            highlightWinner(0,4,8);
-        // Проверяем вторую диагональ – элементы массива 2,4,6
-        } else if ( ! squares[2].getLabel().equals("") && squares[2].getLabel().equals(squares[4].getLabel()) && squares[2].getLabel().equals(squares[6].getLabel()))
-        {
-            theWinner = squares[2].getLabel();
-            highlightWinner(2,4,6);
+            if (!Objects.equals(squares[i][0].getLabel(), "") && Objects.equals(squares[i][0].getLabel(), squares[i][1].getLabel()) && Objects.equals(squares[i][0].getLabel(), squares[i][2].getLabel()))
+            {
+                theWinner = squares[i][0].getLabel();
+                highlightWinner(squares[i][0],squares[i][1],squares[i][2]);
+            }
+            else if (!Objects.equals(squares[0][i].getLabel(), "") && Objects.equals(squares[i][0].getLabel(), squares[1][i].getLabel()) && Objects.equals(squares[0][i].getLabel(), squares[2][i].getLabel()))
+            {
+                theWinner = squares[0][i].getLabel();
+                highlightWinner(squares[0][i],squares[1][i],squares[2][i]);
+            }
+            else if (!Objects.equals(squares[0][0].getLabel(), "") && Objects.equals(squares[0][0].getLabel(), squares[1][1].getLabel()) && Objects.equals(squares[0][0].getLabel(), squares[2][2].getLabel()))
+            {
+                theWinner = squares[0][0].getLabel();
+                highlightWinner(squares[0][0],squares[1][1],squares[2][2]);
+            }
+            else if (!Objects.equals(squares[2][0].getLabel(), "") && Objects.equals(squares[2][0].getLabel(), squares[1][1].getLabel()) && Objects.equals(squares[2][0].getLabel(), squares[0][2].getLabel()))
+            {
+                theWinner = squares[0][0].getLabel();
+                highlightWinner(squares[2][0],squares[1][1],squares[0][2]);
+            }
         }
         return theWinner;
     }
-
 
     /**
      * Этот метод применяет набор правил, чтобы найти
@@ -192,32 +178,32 @@ public class TicTacToe extends Applet implements ActionListener{
      */
     private void computerMove()
     {
-        int selectedSquare;
+        int selectedSquare[];
         // Сначала компьютер пытается найти пустую клетку
         // рядом с двумя клетками с ноликами, чтобы выиграть
         selectedSquare = findEmptySquare("O");
         // Если он не может найти два нолика, то хотя бы
         // попытается не дать оппоненту сделать ряд из 3-х
         // крестиков,поместив нолик рядом с двумя крестиками
-        if ( selectedSquare == -1 )
+        if ( selectedSquare[0] == -1 && selectedSquare[1] == -1)
         {
             selectedSquare = findEmptySquare("X");
         }
         // если selectedSquare все еще равен -1, то
         // попытается занять центральную клетку
-        if ( (selectedSquare == -1) && (squares[4].getLabel().equals("")) )
+        if ( (selectedSquare[0] == -1) && (selectedSquare[1]== -1) && (squares[1][1].getLabel().equals("")) )
         {
-            selectedSquare=4;
+            selectedSquare[0]=1;
+            selectedSquare[1]=1;
         }
         // не повезло с центральной клеткой...
         // просто занимаем случайную клетку
-        if ( selectedSquare == -1 )
+        if ( selectedSquare[0] == -1 && selectedSquare[1] == -1)
         {
             selectedSquare = getRandomSquare();
         }
-        squares[selectedSquare].setLabel("O");
+        squares[selectedSquare[0]][selectedSquare[1]].setLabel("O");
     }
-
 
     /*
      * Этот метод проверяет каждый ряд, колонку и диагональ
@@ -228,109 +214,104 @@ public class TicTacToe extends Applet implements ActionListener{
      * или -1, если не найдено две клетки
      * с одинаковыми надписями
      */
-    private int findEmptySquare(String player)
+    private int[] findEmptySquare(String player)
     {
-        int weight[] = new int[9];
-        for ( int i = 0; i < 9; i++ )
+        int weight[][] = new int[3][3];
+
+        int XY[] = new int[2];
+        XY[0] = -1;
+        XY[1] = -1;
+        for ( int i = 0; i < 3; i++ )
         {
-            if ( squares[i].getLabel().equals("O") )
-                weight[i] = -1;
-            else if ( squares[i].getLabel().equals("X") )
-                weight[i] = 1;
-            else
-                weight[i] = 0;
+            for ( int j = 0; j < 3; j++ )
+            {
+                if (squares[i][j].getLabel().equals("O"))
+                    weight[i][j] = -1;
+                else if (squares[i][j].getLabel().equals("X"))
+                    weight[i][j] = 1;
+                else
+                    weight[i][j] = 0;
+            }
         }
+
         int twoWeights = player.equals("O") ? -2 : 2;
-        // Проверим, есть ли в ряду 1 две одинаковые клетки и
-        // одна пустая.
-        if ( weight[0] + weight[1] + weight[2] == twoWeights )
+
+        for ( int i = 0; i < 3; i++ )
         {
-            if ( weight[0] == 0 )
-                return 0;
-            else if ( weight[1] == 0 )
-                return 1;
-            else
-                return 2;
+            if (weight[0][i] + weight[1][i] + weight[2][i] == twoWeights)
+            {
+               if (weight[0][i] == 0)
+               {
+                   XY[0] = 0;
+                   XY[1] = i;
+               }
+                else if (weight[1][i] == 0)
+                {
+                    XY[0] = 1;
+                    XY[1] = i;
+                }
+               else if (weight[2][i] == 0)
+               {
+                   XY[0] = 2;
+                   XY[1] = i;
+               }
+            }
+            if (weight[i][0] + weight[i][1] + weight[i][2] == twoWeights)
+            {
+                if (weight[i][0] == 0)
+                {
+                    XY[0] = i;
+                    XY[1] = 0;
+                }
+                else if (weight[i][1] == 0)
+                {
+                    XY[0] = i;
+                    XY[1] = 1;
+                }
+                else if (weight[i][2] == 0)
+                {
+                    XY[0] = i;
+                    XY[1] = 2;
+                }
+            }
+            if (weight[0][0] + weight[1][1] + weight[2][2] == twoWeights)
+            {
+                if (weight[0][0] == 0)
+                {
+                    XY[0] = 0;
+                    XY[1] = 0;
+                }
+                else if (weight[1][1] == 0)
+                {
+                    XY[0] = 1;
+                    XY[1] = 1;
+                }
+                else if (weight[2][2] == 0)
+                {
+                    XY[0] = 2;
+                    XY[1] = 2;
+                }
+            }
+            if (weight[2][0] + weight[1][1] + weight[0][2] == twoWeights)
+            {
+                if (weight[2][0] == 0)
+                {
+                    XY[0] = 2;
+                    XY[1] = 0;
+                }
+                else if (weight[1][1] == 0)
+                {
+                    XY[0] = 1;
+                    XY[1] = 1;
+                }
+                else if (weight[0][2] == 0)
+                {
+                    XY[0] = 0;
+                    XY[1] = 2;
+                }
+            }
         }
-        // Проверим, есть ли в ряду 2 две одинаковые клетки и
-        // одна пустая.
-        if (weight[3] +weight[4] + weight[5] == twoWeights)
-        {
-            if ( weight[3] == 0 )
-                return 3;
-            else if ( weight[4] == 0 )
-                return 4;
-            else
-                return 5;
-        }
-        // Проверим, есть ли в ряду 3 две одинаковые клетки и
-        // одна пустая.
-        if (weight[6] + weight[7] +weight[8] == twoWeights )
-        {
-            if ( weight[6] == 0 )
-                return 6;
-            else if ( weight[7] == 0 )
-                return 7;
-            else
-                return 8;
-        }
-        // Проверим, есть ли в колонке 1 две одинаковые клетки и
-        // одна пустая.
-        if (weight[0] + weight[3] + weight[6] == twoWeights)
-        {
-            if ( weight[0] == 0 )
-                return 0;
-            else if ( weight[3] == 0 )
-                return 3;
-            else
-                return 6;
-        }
-        // Проверим, есть ли в колонке 2 две одинаковые клетки
-        // и одна пустая.
-        if (weight[1] +weight[4] + weight[7] == twoWeights )
-        {
-            if ( weight[1] == 0 )
-                return 1;
-            else if ( weight[4] == 0 )
-                return 4;
-            else
-                return 7;
-        }
-        // Проверим, есть ли в колонке 3 две одинаковые клетки
-        // и одна пустая.
-        if (weight[2] + weight[5] + weight[8] == twoWeights )
-        {
-            if ( weight[2] == 0 )
-                return 2;
-            else if ( weight[5] == 0 )
-                return 5;
-            else
-                return 8;
-        }
-        // Проверим, есть ли в диагонали 1 две одинаковые клетки
-        // и одна пустая.
-        if (weight[0] + weight[4] + weight[8] == twoWeights )
-        {
-            if ( weight[0] == 0 )
-                return 0;
-            else if ( weight[4] == 0 )
-                return 4;
-            else
-                return 8;
-        }
-        // Проверим, есть ли в диагонали 2 две одинаковые клетки
-        // и одна пустая.
-        if (weight[2] + weight[4] + weight[6] == twoWeights )
-        {
-            if ( weight[2] == 0 )
-                return 2;
-            else if ( weight[4] == 0 )
-                return 4;
-            else
-                return 6;
-        }
-        // Не найдено двух одинаковых соседних клеток
-        return -1;
+        return XY;
     } // конец метода findEmptySquare()
 
 
@@ -338,14 +319,17 @@ public class TicTacToe extends Applet implements ActionListener{
      * Этот метод выбирает любую пустую клетку
      * @return случайно выбранный номер клетки
      */
-    private int getRandomSquare()
+    private int[] getRandomSquare()
     {
         boolean gotEmptySquare = false;
-        int selectedSquare = -1;
+        int[] selectedSquare = new int[2];
+        selectedSquare[0] = -1;
+        selectedSquare[1] = -1;
         do
         {
-            selectedSquare = (int) (Math.random() * 9 );
-            if (squares[selectedSquare].getLabel().equals(""))
+            selectedSquare[0] = (int) (Math.random() * 3 );
+            selectedSquare[1] = (int) (Math.random() * 3 );
+            if (squares[selectedSquare[0]][selectedSquare[1]].getLabel().equals(""))
             {
                 gotEmptySquare = true; // чтобы закончить цикл
             }
@@ -358,19 +342,23 @@ public class TicTacToe extends Applet implements ActionListener{
      * Этот метод выделяет выигравшую линию.
      * @param первая, вторая и третья клетки для выделения
      */
-    private void highlightWinner(int win1, int win2, int win3)
+    private void highlightWinner(Button button1,Button button2,Button button3)
     {
-        squares[win1].setBackground(Color.CYAN);
-        squares[win2].setBackground(Color.CYAN);
-        squares[win3].setBackground(Color.CYAN);
+        button1.setBackground(Color.CYAN);
+        button2.setBackground(Color.CYAN);
+        button3.setBackground(Color.CYAN);
     }
     // Делаем недоступными клетки и доступной кнопку ”New Game”
     private void endTheGame()
     {
         newGameButton.setEnabled(true);
-        for(int i=0;i<9;i++)
+        for(int i=0;i<3;i++)
         {
-            squares[i].setEnabled(false);
+            for(int j=0;j<3;j++)
+            {
+                squares[i][j].setEnabled(false);
+            }
         }
+
     }
 } // конец класса
