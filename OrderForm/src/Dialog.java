@@ -1,8 +1,9 @@
 import javax.swing.*;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.PlainDocument;
+import javax.swing.text.*;
 import java.awt.*;
+import java.text.DecimalFormat;
+import java.text.*;
+import java.util.Date;
 
 
 public class Dialog {
@@ -19,11 +20,19 @@ public class Dialog {
     JFormattedTextField quantity;
     private Dialog()
     {
+        try {
+            // Определение маски и содание поля ввода мобильного телефона
+            MaskFormatter phoneFormatter = new MaskFormatter("###.##");
+            phoneFormatter.setPlaceholderCharacter('0');
+            quantity = new JFormattedTextField(phoneFormatter);
+            quantity.setColumns(6);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        quantity = new JFormattedTextField();
         DialogModule Engine = new DialogModule(this);
 
-        quantity.setDocument(new PlainDocument()
+      /*  quantity.setDocument(new PlainDocument()  // можно ли вынести в Engine?
         {
             String chars = "0123456789.,";
             @Override
@@ -43,7 +52,7 @@ public class Dialog {
                     }
                 }
             }
-        });
+        });*/
 
         JPanel p0 = new JPanel();
         p0.setLayout(new BorderLayout());
@@ -69,7 +78,6 @@ public class Dialog {
         modelList.addItemListener(Engine);
         quantity.addActionListener(Engine);
         orderButton.addActionListener(Engine);
-
 
         frame.pack();
         frame.setVisible(true);

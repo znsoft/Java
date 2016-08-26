@@ -13,8 +13,22 @@ class DialogModule implements ActionListener, ItemListener {
         this.parent = parent;
     }
 
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e)
+    {
         JButton clickedButton = (JButton) e.getSource();
+        if (clickedButton == parent.orderButton)
+        {
+            try
+            {
+                checkForm(parent.modelList.getSelectedItem().toString(), parent.quantity.getText());
+            }
+            catch (TooManyItemsException message)
+            {
+                parent.orderInfo.setText("Order information: " + message.getMessage());
+                return;
+            }
+        }
+
         double quantity = Double.parseDouble(parent.quantity.getText());
         if (clickedButton == parent.orderButton)
         {
@@ -38,21 +52,27 @@ class DialogModule implements ActionListener, ItemListener {
         }
     }
 
-    public void itemStateChanged(ItemEvent e) {
+    private void checkForm(String model, String quantity) throws TooManyItemsException
+    {
+        if (model.equals("") || quantity.equals("000.00"))
+        {
+            throw new TooManyItemsException(model,0);
+        }
+    }
+
+    public void itemStateChanged(ItemEvent e)
+    {
         if (e.getStateChange() == ItemEvent.SELECTED)
         {
             model = parent.modelList.getSelectedItem().toString();
         }
     }
 
-
-
     private class TooManyItemsException extends Exception
     {
         TooManyItemsException(String model, double quantity)
         {
-            super("Невозможно выполнить заказ: "+model+" в количестве: "+quantity);
+            super("Невозможно выполнить заказ! Модель: "+model+" в количестве: "+quantity);
         }
     }
-
 }
