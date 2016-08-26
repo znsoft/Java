@@ -1,9 +1,6 @@
 import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
-import java.text.DecimalFormat;
-import java.text.*;
-import java.util.Date;
 
 
 public class Dialog {
@@ -15,7 +12,7 @@ public class Dialog {
                        "Bolt",
                        "Lightning"};
 
-    JComboBox modelList = new JComboBox(models);
+    JComboBox<String> modelList = new JComboBox<>(models);
 
     JFormattedTextField quantity;
     private Dialog()
