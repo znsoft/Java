@@ -1,4 +1,5 @@
 package screens;
+
 import engine.PingPongEngine;
 
 import javax.swing.JPanel;
@@ -16,16 +17,17 @@ public class PingPongTable extends JPanel implements GameConstants
 {
     JLabel label;
     public Point point = new Point(0,0);
-    public int ComputerRacket_X =15;
-    private int kidRacket_Y =KID_RACKET_Y_START;
-    Dimension preferredSize= new Dimension(TABLE_WIDTH,TABLE_HEIGHT);
+    public int ComputerRacket_X = 15;
+    private int kidRacket_Y = KID_RACKET_Y_START;
+    Dimension preferredSize= new Dimension(TABLE_WIDTH, TABLE_HEIGHT);
 
     // Этот метод устанавливает размер
     // Вызывается виртуальной Java машиной
-public Dimension getPreferredSize()
-{
-    return preferredSize;
-}
+    public Dimension getPreferredSize()
+    {
+        return preferredSize;
+    }
+
     //Конструктор. Создает обработчик событий мыши.
     PingPongTable()
     {
@@ -56,7 +58,7 @@ public Dimension getPreferredSize()
         g.fillRect(0,0,TABLE_WIDTH,TABLE_HEIGHT);
         g.setColor(Color.yellow);
         // Нарисовать правую ракетку
-        g.fillRect(KID_RACKET_X_START,kidRacket_Y,5,30);
+        g.fillRect(KID_RACKET_X_START, kidRacket_Y,5,30);
         g.setColor(Color.blue);
         // Нарисовать левую ракетку
         g.fillRect(ComputerRacket_X,100,5,30);
@@ -69,7 +71,7 @@ public Dimension getPreferredSize()
         if (point != null) {
             label.setText("Coordinates (x,y): " + point.x +
                     ", " + point.y);
-            g.fillRect(point.x, point.y, 2, 2);
+            g.fillOval(point.x, point.y, 2, 2);
         }
     }
 

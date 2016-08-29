@@ -1,8 +1,5 @@
 package screens;
 
-/**
- * Created by va.tkalin on 29.08.2016.
- */
 public interface GameConstants {
     public final int TABLE_WIDTH = 320;
     public final int TABLE_HEIGHT = 220;
