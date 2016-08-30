@@ -23,6 +23,7 @@ public class PingPongTable extends JPanel implements GameConstants
 
     // Этот метод устанавливает размер
     // Вызывается виртуальной Java машиной
+    // когда юзаем Frame.pack()
     public Dimension getPreferredSize()
     {
         return preferredSize;
@@ -36,15 +37,18 @@ public class PingPongTable extends JPanel implements GameConstants
         addMouseListener(gameEngine);
         // Обрабатывает движения мыши для передвижения ракеток
         addMouseMotionListener(gameEngine);
-    }
-
-    // Добавить панель с JLabel в окно
-    void addPaneltoFrame(Container container)
-    {
+        // Создать экземпляр окна
+        JFrame frame = new JFrame("Ping Pong Green Table");
+        // Убедиться, что окно может быть закрыто по нажатию на
+        //крестик в углу
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        Container container = frame.getContentPane();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.add(this);
         label = new JLabel("Click to see coordinates");
         container.add(label);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     // Перерисовать окно. Этот метод вызывается виртуальной
@@ -89,15 +93,6 @@ public class PingPongTable extends JPanel implements GameConstants
 
     public static void main (String[] args)
     {
-        // Создать экземпляр окна
-        JFrame f = new JFrame("Ping Pong Green Table");
-        // Убедиться, что окно может быть закрыто по нажатию на
-        //крестик в углу
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         PingPongTable table = new PingPongTable();
-        table.addPaneltoFrame(f.getContentPane());
-        // Установить размер окна и сделать его видимым
-        f.pack();
-        f.setVisible(true);
     }
 }

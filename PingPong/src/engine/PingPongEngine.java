@@ -26,26 +26,40 @@ public class PingPongEngine implements MouseListener, MouseMotionListener, GameC
 
     public void mouseMoved(MouseEvent e) {
         int mouse_Y = e.getY();
+        boolean flag = true;
         // Если мышь находится выше ракетки ребенка
         // и не выходит за пределы стола –
         // передвинуть ее вверх, в противном случае – опустить вниз
-        if (mouse_Y < kidRacket_Y && kidRacket_Y > TABLE_TOP){
-            kidRacket_Y -= RACKET_INCREMENT;
-        }else if (kidRacket_Y < TABLE_BOTTOM) {
-            kidRacket_Y += RACKET_INCREMENT;
+        if (mouse_Y < kidRacket_Y && kidRacket_Y > TABLE_TOP)
+        {
+            do
+            {
+                kidRacket_Y -= RACKET_INCREMENT;
+                table.setKidRacket_Y(kidRacket_Y);
+                table.repaint();
+                if (mouse_Y == kidRacket_Y || kidRacket_Y == TABLE_TOP)
+                {
+                    flag = false;
+                }
+            } while (flag == true);
         }
-        // Установить новое положение ракетки
-        table.setKidRacket_Y(kidRacket_Y);
-        table.repaint();
+        else if (mouse_Y > kidRacket_Y && kidRacket_Y < TABLE_BOTTOM)
+        {
+            do {
+                kidRacket_Y += RACKET_INCREMENT;
+                table.setKidRacket_Y(kidRacket_Y);
+                table.repaint();
+                if (mouse_Y == kidRacket_Y || kidRacket_Y == TABLE_BOTTOM)
+                {
+                    flag = false;
+                }
+            } while (flag == true);
+        }
     }
 
     public void mouseReleased(MouseEvent e) {};
     public void mouseEntered(MouseEvent e) {};
     public void mouseExited(MouseEvent e) {};
     public void mouseClicked(MouseEvent e) {};
-    // Обязательные методы из интерфейса MouseMotionListener
     public void mouseDragged(MouseEvent e) {}
-
-
-
 }
