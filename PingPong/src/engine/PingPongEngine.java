@@ -1,8 +1,12 @@
 package engine;
 
-import java.awt.event.*;
+import screens.GameConstants;
+import screens.PingPongTable;
 
-import screens.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 
 public class PingPongEngine implements Runnable, MouseMotionListener, GameConstants, KeyListener {
 
@@ -165,6 +169,11 @@ public class PingPongEngine implements Runnable, MouseMotionListener, GameConsta
                     computerRacket_Y -= RACKET_INCREMENT;
                 }
                 table.setComputerRacket_Y(computerRacket_Y);
+
+
+                if (!isBallOnTheTable()) {
+                    verticalSlide = verticalSlide * -1;
+                }
                 // Шаг 4. Приостановить
                 try
                 {

@@ -11,9 +11,9 @@ public interface GameConstants
     public final int BALL_INCREMENT = 4;
     // Максимальные и минимальные координаты мяча
     public final int BALL_MIN_X = 1+ BALL_INCREMENT;
-    public final int BALL_MIN_Y = 1 + BALL_INCREMENT;
+    public final int BALL_MIN_Y = 20;
     public final int BALL_MAX_X = TABLE_WIDTH - BALL_INCREMENT;
-    public final int BALL_MAX_Y = TABLE_HEIGHT - BALL_INCREMENT;
+    public final int BALL_MAX_Y = 200;
     // Начальные координаты мяча
     public final int BALL_START_X = TABLE_WIDTH/2;
     public final int BALL_START_Y = TABLE_HEIGHT/2;
