@@ -39,24 +39,30 @@ public class TwoThreadsOneClass extends JFrame implements ActionListener, Runnab
 
     public void actionPerformed(ActionEvent e)
     {
-        // Создать поток и выполнить “замораживающий” код
-        // без блокировки
+       // первый поток из класса
         if (e.getSource() == myButton1) {
             Thread t = new Thread(new Runnable() {
                 public void run() {
-                    this.label1.setText("123 " + i);
+                    for (int i = 0; i < 3000000; i++)
+                    {
+                        TwoThreadsOneClass.this.label1.setText("123 " + i);
+                    }
                 }
             });
             t.start();
         }
+
+        // второй поток из класса
         else if (e.getSource() == myButton2) {
-            Thread worker = new Thread(new Runnable() {
-                @Override
+            Thread t = new Thread(new Runnable() {
                 public void run() {
-                    this.label2.setText("321 " + i);
+                    for (int i = 3000000; i > 0; i--)
+                    {
+                        TwoThreadsOneClass.this.label2.setText("321 " + i);
+                    }
                 }
             });
-            worker.start(); // вызывает метод run()
+            t.start();
         }
     }
 
