@@ -15,11 +15,12 @@ import java.awt.Color;
 
 public class PingPongTable extends JPanel implements GameConstants
 {
-    JLabel label;
-    public Point point = new Point(0,0);
-    public int ComputerRacket_X = 15;
+    private JLabel label;
+    private int computerRacket_Y = COMPUTER_RACKET_Y_START;
     private int kidRacket_Y = KID_RACKET_Y_START;
-    Dimension preferredSize= new Dimension(TABLE_WIDTH, TABLE_HEIGHT);
+    private int ballX = BALL_START_X;
+    private int ballY = BALL_START_Y;
+    Dimension preferredSize = new Dimension(TABLE_WIDTH,TABLE_HEIGHT);
 
     // Этот метод устанавливает размер
     // Вызывается виртуальной Java машиной
@@ -33,10 +34,10 @@ public class PingPongTable extends JPanel implements GameConstants
     PingPongTable()
     {
         PingPongEngine gameEngine =new PingPongEngine(this);
-        // Обрабатывает клики мыши для отображения ее координат
-        addMouseListener(gameEngine);
         // Обрабатывает движения мыши для передвижения ракеток
         addMouseMotionListener(gameEngine);
+        // Обрабатываем!события клавиатуры
+        addKeyListener(gameEngine);
         // Создать экземпляр окна
         JFrame frame = new JFrame("Ping Pong Green Table");
         // Убедиться, что окно может быть закрыто по нажатию на
@@ -45,9 +46,10 @@ public class PingPongTable extends JPanel implements GameConstants
         Container container = frame.getContentPane();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.add(this);
-        label = new JLabel("Click to see coordinates");
+        label = new JLabel("Press N for a new game, S to serve or Q to quit");
         container.add(label);
         frame.pack();
+        frame.setBounds(0, 0, TABLE_WIDTH + 5, TABLE_HEIGHT + 40);
         frame.setVisible(true);
     }
 
@@ -56,39 +58,58 @@ public class PingPongTable extends JPanel implements GameConstants
     // вызывается метод repaint() из PingPointGameEngine
     public void paintComponent(Graphics g)
     {
-        super.paintComponent(g);
+        super.paintComponent(g);  // ЗАЧЕМ?
         g.setColor(Color.GREEN);
         // Нарисовать стол
-        g.fillRect(0,0,TABLE_WIDTH,TABLE_HEIGHT);
+        g.fillRect(0, 0, TABLE_WIDTH, TABLE_HEIGHT);
         g.setColor(Color.yellow);
         // Нарисовать правую ракетку
-        g.fillRect(KID_RACKET_X_START, kidRacket_Y,5,30);
+        g.fillRect(KID_RACKET_X, kidRacket_Y, RACKET_WIDTH, RACKET_LENGTH);
         g.setColor(Color.blue);
         // Нарисовать левую ракетку
-        g.fillRect(ComputerRacket_X,100,5,30);
+        g.fillRect(COMPUTER_RACKET_X, computerRacket_Y, RACKET_WIDTH, RACKET_LENGTH);
         g.setColor(Color.red);
-        g.fillOval(25,110,10,10); //Нарисовать мяч
+        g.fillOval(ballX, ballY, 10, 10); //Нарисовать мяч
         g.setColor(Color.white);
-        g.drawRect(10,10,300,200);
-        g.drawLine(160,10,160,210);
+        g.drawRect(10, 10, 300, 200);
+        g.drawLine(160, 10, 160, 210);
         // Отобразить точку как маленький квадрат 2x2 пикселей
-        if (point != null) {
-            label.setText("Coordinates (x,y): " + point.x +
-                    ", " + point.y);
-            g.fillOval(point.x, point.y, 2, 2);
-        }
+        requestFocus();
     }
 
     // Установить текущее положение ракетки ребенка
-    public void setKidRacket_Y(int xCoordinate)
+    public void setKidRacket_Y(int yCoordinate)
     {
-        this.kidRacket_Y = xCoordinate;
+        this.kidRacket_Y = yCoordinate;
+        repaint();
     }
 
     // Вернуть текущее положение ракетки ребенка
-    public int getKidRacket_Y(int xCoordinate)
+    public int getKidRacket_Y()
     {
         return kidRacket_Y;
+    }
+
+    // Установить текущее положение ракетки компьютера!
+    public void setComputerRacket_Y(int yCoordinate)
+    {
+            this.computerRacket_Y = yCoordinate;
+        repaint();
+    }
+
+    // Установить игровое сообщение
+    public void setMessageText(String text)
+    {
+        label.setText(text);
+        repaint();
+    }
+
+    // Установить позицию мяча!
+    public void setBallPosition(int xPos, int yPos)
+    {
+        ballX=xPos;
+        ballY=yPos;
+        repaint();
     }
 
     public static void main (String[] args)
