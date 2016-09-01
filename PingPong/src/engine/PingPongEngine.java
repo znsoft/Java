@@ -1,9 +1,11 @@
 package engine;
 
 import screens.*;
+
+import javax.swing.*;
 import java.awt.event.*;
 
-public class PingPongEngine implements Runnable, MouseMotionListener, GameConstants, KeyListener {
+public class PingPongEngine implements Runnable, MouseMotionListener, GameConstants, KeyListener,  ActionListener{
 
     private PingPongTable table; // ссылка на стол!
     private int kidRacket_Y = KID_RACKET_Y_START;
@@ -16,14 +18,33 @@ public class PingPongEngine implements Runnable, MouseMotionListener, GameConsta
     private boolean ballServed = false;
     //Значение вертикального передвижения мяча в пикселях!
     private int verticalSlide;
+    private int BALL_INCREMENT = 1;
 
     // Конструктор. Содержит ссылку на объект стола
-    public PingPongEngine(PingPongTable greenTable) {
+    public PingPongEngine(PingPongTable greenTable)
+    {
         table = greenTable;
         ballX = BALL_START_X;
         ballY = BALL_START_Y;
         Thread t = new Thread(this);
         t.start();
+    }
+
+    public void actionPerformed(ActionEvent e)
+    {
+        String Comstr = e.getActionCommand();
+        BALL_INCREMENT = Integer.parseInt(Comstr);
+        for (int i = 0; i < 9; i++)
+        {
+            if (table.items[i].getText() == Comstr)
+            {
+                table.items[i].setSelected(true);
+            }
+            else
+            {
+                table.items[i].setSelected(false);
+            }
+        }
     }
 
     public void mouseMoved(MouseEvent e) {
@@ -79,27 +100,27 @@ public class PingPongEngine implements Runnable, MouseMotionListener, GameConsta
         computerScore = 0;
         kidScore = 0;
         table.setMessageText("Score Computer: 0 Kid: 0");
-        kidServe();
         ballX = BALL_START_X;
         ballY = BALL_START_Y;
         table.setBallPosition(ballX, ballY);
+        kidServe();
+
     }
 
-    private void kidServe()
-    {
-        ballServed = true;
-        ballX = KID_RACKET_X - 1;
-        ballY = kidRacket_Y;
-        if (ballY > TABLE_HEIGHT / 2)
+    private void kidServe() {
+        if (kidScore != WINNING_SCORE && computerScore  != WINNING_SCORE)
         {
-            verticalSlide = -1;
+            ballServed = true;
+            ballX = KID_RACKET_X - 1;
+            ballY = kidRacket_Y;
+            if (ballY > TABLE_HEIGHT / 2) {
+                verticalSlide = -1;
+            } else {
+                verticalSlide = 1;
+            }
+            table.setBallPosition(ballX, ballY);
+            table.setKidRacket_Y(kidRacket_Y);
         }
-        else
-        {
-            verticalSlide = 1;
-        }
-        table.setBallPosition(ballX, ballY);
-        table.setKidRacket_Y(kidRacket_Y);
     }
 
     private void displayScore() {

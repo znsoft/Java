@@ -1,11 +1,8 @@
 package screens;
 
 import engine.PingPongEngine;
-import javax.swing.JPanel;
-import javax.swing.JFrame;
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.WindowConstants;
+
+import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.Container;
 import java.awt.Graphics;
@@ -18,6 +15,9 @@ public class PingPongTable extends JPanel implements GameConstants
     private int kidRacket_Y = KID_RACKET_Y_START;
     private int ballX;
     private int ballY;
+    public JMenuBar menu = new JMenuBar();
+    public JMenu menuGame = new JMenu ("Ball speed");
+    public JRadioButtonMenuItem[] items = new JRadioButtonMenuItem[9];
     Dimension preferredSize = new Dimension(TABLE_WIDTH,TABLE_HEIGHT);
 
     // Этот метод устанавливает размер
@@ -43,11 +43,27 @@ public class PingPongTable extends JPanel implements GameConstants
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         Container container = frame.getContentPane();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
+        menuGame.setPreferredSize(new Dimension(130,10));
+        menu.add(menuGame);
+        for (int i = 0; i < 9; i++)
+        {
+            items[i] = new JRadioButtonMenuItem(Integer.toString(i+1));
+            items[i].addActionListener(gameEngine);
+            menuGame.add(items[i]);
+        }
+        items[0].setSelected(true);
+
+        container.add(menu);
+
+
         container.add(this);
+
         label = new JLabel("Press N for a new game, S to serve or Q to quit");
         container.add(label);
+
         frame.pack();
-        frame.setBounds(0, 0, TABLE_WIDTH + 15, TABLE_HEIGHT + 50);
+        frame.setBounds(0, 0, TABLE_WIDTH + 15, TABLE_HEIGHT + 80);
         frame.setVisible(true);
     }
 

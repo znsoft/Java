@@ -24,8 +24,8 @@ public interface GameConstants {
     public final int COMPUTER_RACKET_Y_START = FIELD_HEIGTH/2;
 
     // Èçìåíÿåìûå âåëè÷èíû
-    public final int RACKET_INCREMENT = 1; //3
-    public final int BALL_INCREMENT = 1; //3
+    public final int RACKET_INCREMENT = 10; //3
+    public final int BALL_INCREMENT = 10; //3
 
     public final int WINNING_SCORE = 21;
     public final int SLEEP_TIME = 10;
