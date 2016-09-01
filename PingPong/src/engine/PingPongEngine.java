@@ -1,12 +1,7 @@
 package engine;
 
-import screens.GameConstants;
-import screens.PingPongTable;
-
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
+import screens.*;
+import java.awt.event.*;
 
 public class PingPongEngine implements Runnable, MouseMotionListener, GameConstants, KeyListener {
 
@@ -25,7 +20,8 @@ public class PingPongEngine implements Runnable, MouseMotionListener, GameConsta
     // Конструктор. Содержит ссылку на объект стола
     public PingPongEngine(PingPongTable greenTable) {
         table = greenTable;
-
+        ballX = BALL_START_X;
+        ballY = BALL_START_Y;
         Thread t = new Thread(this);
         t.start();
     }
@@ -84,6 +80,9 @@ public class PingPongEngine implements Runnable, MouseMotionListener, GameConsta
         kidScore = 0;
         table.setMessageText("Score Computer: 0 Kid: 0");
         kidServe();
+        ballX = BALL_START_X;
+        ballY = BALL_START_Y;
+        table.setBallPosition(ballX, ballY);
     }
 
     private void kidServe()
@@ -119,9 +118,12 @@ public class PingPongEngine implements Runnable, MouseMotionListener, GameConsta
 
     // Проверить, не пересек ли мяч верхнюю или нижнюю границу стола
     private boolean isBallOnTheTable() {
-        if (ballY >= BALL_MIN_Y && ballY <= BALL_MAX_Y) {
+        if (ballY >= BALL_MIN_Y && ballY <= BALL_MAX_Y)
+        {
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
@@ -129,7 +131,9 @@ public class PingPongEngine implements Runnable, MouseMotionListener, GameConsta
     // Обязательный метод run() из интерфейса Runnable
     public void run() {
         boolean canBounce = false;
-        while (true) {
+        while (true)
+        {
+            table.setBallPosition(ballX, ballY);
             if (ballServed)
             {   // если мяч движется!!!! !
                 //Шаг 1. Мяч движется влево?

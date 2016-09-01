@@ -22,16 +22,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PingPongTable.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PingPongTable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/screens/PingPongTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="66" column="67" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
+            <state relative-caret-position="421">
+              <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
               <folding>
-                <element signature="e#834#835#0" expanded="true" />
-                <element signature="e#870#871#0" expanded="true" />
-                <element signature="e#3639#3640#0" expanded="true" />
-                <element signature="e#3696#3697#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#780#781#0" expanded="true" />
+                <element signature="e#816#817#0" expanded="true" />
+                <element signature="e#3094#3095#0" expanded="true" />
+                <element signature="e#3128#3129#0" expanded="true" />
+                <element signature="e#3662#3663#0" expanded="true" />
+                <element signature="e#3719#3720#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -40,28 +43,8 @@
       <file leaf-file-name="GameConstants.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/screens/GameConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PingPongEngine.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/PingPongEngine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="121" column="54" selection-start-line="121" selection-start-column="54" selection-end-line="121" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PingPongGameEngine.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Pong2/src/screens/PingPongGameEngine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="342" column="38" selection-start-line="342" selection-start-column="38" selection-end-line="342" selection-end-column="38" />
+            <state relative-caret-position="217">
+              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -70,9 +53,45 @@
       <file leaf-file-name="GameConstants.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Pong2/src/screens/GameConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="48" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="540">
+              <caret line="36" column="46" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="46" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PingPongEngine.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/engine/PingPongEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2707">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PingPongGreenTable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Pong2/src/screens/PingPongGreenTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PingPongGameEngine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Pong2/src/screens/PingPongGameEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-136">
+              <caret line="312" column="37" selection-start-line="312" selection-start-column="37" selection-end-line="312" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,8 +114,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/screens/PingPongTable.java" />
         <option value="$PROJECT_DIR$/src/engine/PingPongEngine.java" />
+        <option value="$PROJECT_DIR$/src/screens/PingPongTable.java" />
         <option value="$PROJECT_DIR$/src/screens/GameConstants.java" />
       </list>
     </option>
@@ -108,10 +127,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -139,17 +158,70 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PingPong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PingPong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PingPong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PingPong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PingPong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="screens" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PingPong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PingPong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pong2/src/screens/GameConstants.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pong2/src/screens/PingPongGreenTable.java" />
   </component>
   <component name="RunManager" selected="Application.PingPongTable">
     <configuration default="false" name="PingPongTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -621,29 +693,31 @@
       <workItem from="1472617041661" duration="3154000" />
       <workItem from="1472625254878" duration="494000" />
       <workItem from="1472642569699" duration="610000" />
+      <workItem from="1472683813158" duration="41000" />
+      <workItem from="1472683920345" duration="5050000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16306000" />
+    <option name="totallyTimeSpent" value="21397000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -698,9 +772,28 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/screens/GameConstants.java</url>
+          <line>28</line>
+          <properties field="BALL_START_X" class="screens.GameConstants" />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="17" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="ballX" />
+        <watch expression="ballY" />
+        <watch expression="TABLE_WIDTH/2" />
+        <watch expression="FIELD_X0" />
+        <watch expression="TABLE_HEIGHT/2" />
+        <watch expression="FIELD_Y0" />
+        <watch expression="FIELD_HEIGHT" />
+        <watch expression="BALL_MIN_X" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -709,13 +802,102 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/screens/PingPongTable.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/GameConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/PingPongEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="121" column="54" selection-start-line="121" selection-start-column="54" selection-end-line="121" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/PingPongTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/GameConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/PingPongEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="121" column="54" selection-start-line="121" selection-start-column="54" selection-end-line="121" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Pong2/src/screens/PingPongGameEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5644">
+          <caret line="342" column="38" selection-start-line="342" selection-start-column="38" selection-end-line="342" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Pong2/src/screens/GameConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/PingPongTable.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#3639#3640#0" expanded="true" />
-            <element signature="e#3696#3697#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -732,7 +914,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2771">
           <caret line="167" column="39" selection-start-line="167" selection-start-column="39" selection-end-line="167" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -741,10 +925,13 @@
         <state relative-caret-position="272">
           <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#3639#3640#0" expanded="true" />
-            <element signature="e#3696#3697#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -761,7 +948,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -770,10 +959,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#3639#3640#0" expanded="true" />
-            <element signature="e#3696#3697#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -790,7 +982,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -799,10 +993,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#3639#3640#0" expanded="true" />
-            <element signature="e#3696#3697#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -819,7 +1016,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -828,10 +1027,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#3639#3640#0" expanded="true" />
-            <element signature="e#3696#3697#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -848,7 +1050,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
           <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -857,10 +1061,13 @@
         <state relative-caret-position="238">
           <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
           <folding>
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#3639#3640#0" expanded="true" />
-            <element signature="e#3696#3697#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -877,51 +1084,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Pong2/src/screens/GameConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="48" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Pong2/src/screens/PingPongGameEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="342" column="38" selection-start-line="342" selection-start-column="38" selection-end-line="342" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="-136">
+          <caret line="312" column="37" selection-start-line="312" selection-start-column="37" selection-end-line="312" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/PingPongEngine.java">
+    <entry file="file://$PROJECT_DIR$/../Pong2/src/screens/PingPongGreenTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="121" column="54" selection-start-line="121" selection-start-column="54" selection-end-line="121" selection-end-column="54" />
+        <state relative-caret-position="425">
+          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/PingPongTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Pong2/src/screens/GameConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="46" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/GameConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+        <state relative-caret-position="217">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/PingPongTable.java">
+    <entry file="file://$PROJECT_DIR$/src/engine/PingPongEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="66" column="67" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
+        <state relative-caret-position="-2707">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding>
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#3639#3640#0" expanded="true" />
-            <element signature="e#3696#3697#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
