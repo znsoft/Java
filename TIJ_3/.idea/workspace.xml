@@ -22,16 +22,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Assignment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Assignment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Assignment2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment2.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,12 +66,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chapter3_12.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Chapter3_12.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Chapter3_12.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="74" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CharToBinaryString.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CharToBinaryString.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="e#475#476#0" expanded="true" />
+                <element signature="e#564#565#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/Chapter3_10.java" />
         <option value="$PROJECT_DIR$/src/Chapter3_12.java" />
         <option value="$PROJECT_DIR$/src/Chaper3_11.java" />
+        <option value="$PROJECT_DIR$/src/CharToBinaryString.java" />
       </list>
     </option>
   </component>
@@ -263,22 +267,7 @@
       <recent name="E:\Repo\Java\TIJ_3\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Chaper3_11">
-    <configuration default="false" name="hex_oct" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="hex_oct" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="TIJ_3" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.CharToBinaryString">
     <configuration default="false" name="minmax_double_float_exp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="minmax_double_float_exp" />
@@ -327,6 +316,21 @@
     <configuration default="false" name="Chapter3_12" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Chapter3_12" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TIJ_3" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="CharToBinaryString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="CharToBinaryString" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -760,19 +764,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.hex_oct" />
-      <item index="1" class="java.lang.String" itemvalue="Application.minmax_double_float_exp" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Chapter3_10" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Chaper3_11" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Chapter3_12" />
+      <item index="0" class="java.lang.String" itemvalue="Application.minmax_double_float_exp" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Chapter3_10" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Chaper3_11" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Chapter3_12" />
+      <item index="4" class="java.lang.String" itemvalue="Application.CharToBinaryString" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Chaper3_11" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Chapter3_12" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Chapter3_10" />
-        <item index="3" class="java.lang.String" itemvalue="Application.minmax_double_float_exp" />
-        <item index="4" class="java.lang.String" itemvalue="Application.hex_oct" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CharToBinaryString" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Chaper3_11" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Chapter3_12" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Chapter3_10" />
+        <item index="4" class="java.lang.String" itemvalue="Application.minmax_double_float_exp" />
       </list>
     </recent_temporary>
   </component>
@@ -791,12 +795,12 @@
       <updated>1473645592023</updated>
       <workItem from="1473645593293" duration="1370000" />
       <workItem from="1473658214456" duration="10914000" />
-      <workItem from="1474431896617" duration="6020000" />
+      <workItem from="1474431896617" duration="7114000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18304000" />
+    <option name="totallyTimeSpent" value="19398000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
@@ -1041,9 +1045,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Chapter3_12.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="74" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CharToBinaryString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#475#476#0" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
